@@ -3,12 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Dead
+  - Score
+  - Counter
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -40,4 +43,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Obstacle
+    uniqueID: 80682209
+    locked: 0
+  - name: Player Layer
+    uniqueID: 338764535
+    locked: 0
+  - name: FrontObstacle
+    uniqueID: 2043966569
+    locked: 0
+  - name: UI
+    uniqueID: 1046556681
     locked: 0
