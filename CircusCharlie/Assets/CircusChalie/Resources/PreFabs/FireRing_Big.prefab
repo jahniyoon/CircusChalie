@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 4323445072345010135}
   - component: {fileID: 4323445072345010128}
   - component: {fileID: -2679714547726030112}
+  - component: {fileID: 1526948795053168507}
   m_Layer: 0
   m_Name: FireRing_Big
   m_TagString: Dead
@@ -314,6 +315,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &1526948795053168507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323445072345010130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e1edd74aa4c5f41aa7ee910c7c39ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorezone: {fileID: 7106755575643765172}
 --- !u!1 &7106755575643765172
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +341,7 @@ GameObject:
   - component: {fileID: 3077475403942553081}
   - component: {fileID: 6216751388709566512}
   m_Layer: 0
-  m_Name: Square
+  m_Name: ScoreZone
   m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

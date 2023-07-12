@@ -10,10 +10,16 @@ public class GameManager : MonoBehaviour
     public bool isGameOver = false;
     public TMP_Text scoreText;
     public TMP_Text bestscoreText;
+
+    public TMP_Text distance1Text;
+    public TMP_Text distance2Text;
+    public TMP_Text distance3Text;
+    
     public GameObject gameOverUi;
 
     private int score = 0;
     private int highscore = 0;
+    private int distance = 100;
 
     private void Awake()
     {
@@ -62,6 +68,46 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void DistanceIs(int newDistance)
+    {
+        // 게임오버가 아니라면
+        if (isGameOver == false)
+        {
+            distance = newDistance;
+            //거리 증가
+            distance1Text.text = string.Format("{0}", distance);
+            distance2Text.text = string.Format("{0}", distance);
+            distance3Text.text = string.Format("{0}", distance);
+
+        }
+    } public void AddDistance()
+    {
+        // 게임오버가 아니라면
+        if (isGameOver == false)
+        {
+            //거리 증가
+            distance += 10;
+            distance1Text.text = string.Format("{0}", distance);
+            distance2Text.text = string.Format("{0}", distance);
+            distance3Text.text = string.Format("{0}", distance);
+
+        }
+    }
+    public void RemoveDistance()
+    {
+        // 게임오버가 아니라면
+        if (isGameOver == false)
+        {
+            //거리 감소
+            distance -= 10;
+            distance1Text.text = string.Format("{0}", distance);
+            distance2Text.text = string.Format("{0}", distance);
+            distance3Text.text = string.Format("{0}", distance);
+
+        }
+    }
+
     public void OnPlayerDead()
     {
         isGameOver = true;

@@ -15,4 +15,17 @@ public class StageCounter : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+
+        if (other.tag == "Dead")
+        {
+            Debug.Log("Á¡¼ö¸¦ È¹µæÇß³ª?");
+
+            //GameManager.instance.DistanceIs();
+
+        }
+    }
 }

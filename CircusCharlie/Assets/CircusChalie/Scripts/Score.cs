@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,7 +22,10 @@ public class Score : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            Debug.Log("Á¡¼ö¸¦ È¹µæÇß³ª?");
+            //Debug.Log("Á¡¼ö¸¦ È¹µæÇß³ª?");
+
+            Audio audio = FindObjectOfType<Audio>();
+            audio.CoinSound();
 
             GameManager.instance.AddScore(100);
             gameObject.SetActive(false);

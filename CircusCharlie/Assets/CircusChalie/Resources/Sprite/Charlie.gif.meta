@@ -69,8 +69,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureFormat: 4
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -456,7 +456,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_15
+      name: Charlie_Die
       rect:
         serializedVersion: 2
         x: 164
@@ -918,7 +918,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_37
+      name: Lion_Die
       rect:
         serializedVersion: 2
         x: 272
@@ -1745,7 +1745,7 @@ TextureImporter:
         width: 14
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1766,7 +1766,7 @@ TextureImporter:
         width: 14
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1796,7 +1796,6 @@ TextureImporter:
       Charlie_12: 131477382
       Charlie_13: 1748457618
       Charlie_14: -373264630
-      Charlie_15: -421028779
       Charlie_16: -1902257709
       Charlie_17: 1882908508
       Charlie_18: 1450906060
@@ -1815,7 +1814,6 @@ TextureImporter:
       Charlie_31: -71194693
       Charlie_32: -1680767328
       Charlie_33: 950120765
-      Charlie_37: 862497163
       Charlie_38: 1265626883
       Charlie_39: -374118588
       Charlie_4: -890831507
@@ -1854,6 +1852,7 @@ TextureImporter:
       Charlie_75: -403660568
       Charlie_8: -819464729
       Charlie_9: 910340929
+      Charlie_Die: -421028779
       Charlie_Walk_1: -1758488056
       Charlie_Walk_2: 292758110
       FireRing_L_1: -832742873
@@ -1862,6 +1861,7 @@ TextureImporter:
       FireRing_L_Front_2: 288915749
       FireRing_S_1: 1720987032
       FireRing_S_2: 1297600468
+      Lion_Die: 862497163
       Lion_Walk_1: -1843812826
       Lion_Walk_2: -1384814851
       Lion_Walk_3: -334176151
