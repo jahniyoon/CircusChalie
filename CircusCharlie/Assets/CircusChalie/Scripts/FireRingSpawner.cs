@@ -6,6 +6,7 @@ using UnityEngine;
 public class FireRingSpawner : MonoBehaviour
 {
     public GameObject fireringPrefab;
+    public GameObject fireringSmallsPrefab;
     public int count = 3;
 
     public float timeBetSpawnMin = 1.25f;
@@ -13,10 +14,16 @@ public class FireRingSpawner : MonoBehaviour
     private float timeBetSpawn;
 
     public float yPos = 0.2f;
-    private float xPos = 20f;
+    private float xPos = 13f;
+    private float xPosSmall = 15;
+
+    private int smallCount = 0;
 
     private GameObject[] firerings;
     private int currentIndex = 0;
+
+    private GameObject fireringSmalls;
+
 
     private Vector2 poolPosition = new Vector2(0, -25f);
     private float lastSpawnTime;
@@ -25,6 +32,7 @@ public class FireRingSpawner : MonoBehaviour
     void Start()
     {
         firerings = new GameObject[count];
+
         
         for (int i = 0; i < count; i++)
         {
@@ -34,6 +42,10 @@ public class FireRingSpawner : MonoBehaviour
         }
         lastSpawnTime = 0f;
         timeBetSpawn = 0f;
+
+        fireringSmalls = Instantiate(fireringSmallsPrefab, poolPosition, Quaternion.identity); // 인스턴스 생성
+        fireringSmalls.transform.SetParent(transform);
+
     }
 
     // Update is called once per frame
@@ -53,11 +65,22 @@ public class FireRingSpawner : MonoBehaviour
             firerings[currentIndex].transform.position = new Vector2(xPos, yPos);
 
             currentIndex += 1;
+            smallCount += 1;
 
             if (count <= currentIndex)
             {
                 currentIndex = 0;
             }
+
+            if (smallCount == 5)
+            {
+                fireringSmalls.SetActive(false);
+                fireringSmalls.SetActive(true);
+                fireringSmalls.transform.position = new Vector2(xPosSmall, yPos);
+                smallCount = 0;
+
+            }
+
         }
         
     }

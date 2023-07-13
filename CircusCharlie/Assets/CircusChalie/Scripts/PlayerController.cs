@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         lionAnimator = transform.Find("Lion").GetComponent<Animator>();
 
         StageController.isDead = false;
+        isClearArea = false;
 
     }
 
@@ -82,8 +83,9 @@ public class PlayerController : MonoBehaviour
 
         playerRigid.AddForce(new Vector2(0, jumpForce));
         playerRigid.velocity = Vector2.zero;
-        isDead = true;
 
+        // 플레이어 죽음 체크
+        isDead = true;
         StageController.isDead = true;
 
         Audio audio = FindObjectOfType<Audio>();
@@ -105,6 +107,13 @@ public class PlayerController : MonoBehaviour
         isDead = true;
 
         StageController.isDead = true;
+        StageController.isClear = true;
+
+
+        Audio audio = FindObjectOfType<Audio>();
+        audio.ClearSound();
+        audio.ClapSound();
+
 
 
         GameManager.instance.OnPlayerClear(); // 게임매니저의 OnPlayerClear 불러오기
@@ -124,7 +133,29 @@ public class PlayerController : MonoBehaviour
             Clear();
         }
 
+        //점수
+        if (other.tag == "Ring" && isDead == false || other.tag == "Score" && isDead == false)
+        {
+
+            GameManager.instance.AddScore(100);
+        }
+
+        //클리어존에서 뒤로가게 만들때
+        if (other.tag == "PlayerPosition" && isDead == false)
+        {
+            Debug.Log("플레이어 클리어존에서 탈출 요청");
+            playerRigid.velocity = Vector2.zero;
+
+            isClearArea = false;
+            StageController.isClearZone = true;
+        }
+
     }
+
+
+
+
+    
 
 
     private void OnCollisionEnter2D(Collision2D collision)

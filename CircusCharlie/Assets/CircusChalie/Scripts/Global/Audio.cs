@@ -8,6 +8,8 @@ public class Audio : MonoBehaviour
     public AudioClip jumpClip;
     public AudioClip coinClip;
     public AudioClip dieClip;
+    public AudioClip clearClip;
+    public AudioClip clapClip;
 
     private AudioSource audioSource;
 
@@ -32,12 +34,20 @@ public class Audio : MonoBehaviour
     public void CoinSound()
     {
         audioSource.PlayOneShot(coinClip);
+    } 
+    public void ClapSound()
+    {
+        audioSource.PlayOneShot(clapClip);
     }
     public void DieSound()
     {
         audioSource.clip = dieClip;
         audioSource.Play();
     }
-   
+    public void ClearSound()
+    {
+        audioSource.clip = clearClip;
+        audioSource.Play();
+    }
 
 }

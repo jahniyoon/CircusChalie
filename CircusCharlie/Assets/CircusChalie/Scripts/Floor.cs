@@ -5,17 +5,21 @@ using UnityEngine;
 public class Floor : MonoBehaviour
 {
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        // 플로어가 클리어존을 만나면 
+        // 스테이지 컨트롤 해제, 플레이어 컨트롤 유효
         if (other.tag == "Clear")
         {
-            Debug.Log("플로어 클리어 만남");
+            Debug.Log("만났나?");
             PlayerController.isClearArea = true;
-            StageController.isClearArea = false; ;
+            StageController.isClearZone = false; 
         }
-        else
-        PlayerController.isClearArea = false;
-        StageController.isClearArea = true; ;
+
+
+        //else
+        //    PlayerController.isClearArea = false;
+        //     StageController.isClearZone = true; ;
 
 
     }

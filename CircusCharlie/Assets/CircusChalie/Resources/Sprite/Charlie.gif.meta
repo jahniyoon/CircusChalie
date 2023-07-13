@@ -1778,6 +1778,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: FireRing_S_Front_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 127
+        width: 14
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f372a0ae6aba36842bec122373ae8e84
+      internalID: 2051292528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireRing_S_Front_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 127
+        width: 14
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d4d3fb2aed72445a1df7b2093ae3e9
+      internalID: -287483542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1860,6 +1902,8 @@ TextureImporter:
       FireRing_L_Front_2: 288915749
       FireRing_S_1: 1720987032
       FireRing_S_2: 1297600468
+      FireRing_S_Front_1: 2051292528
+      FireRing_S_Front_2: -287483542
       Goal: 755154312
       Lion_Die: 862497163
       Lion_Walk_1: -1843812826

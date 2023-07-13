@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/CircusChalie/Scenes/TitleScene.unity
+    guid: 7fe9b14e45431534a87d30a97003b7ef
+  - enabled: 1
+    path: Assets/CircusChalie/Scenes/Stage1Scene.unity
+    guid: 5fa5041580bd6ca4bbe68fdf138578e0
+  - enabled: 1
+    path: Assets/CircusChalie/Scenes/Stage2Scene.unity
+    guid: 38ffc0ed01389c442a600a0031a7f6d9
   m_configObjects: {}

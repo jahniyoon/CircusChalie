@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
             Audio audio = FindObjectOfType<Audio>();
             audio.CoinSound();
 
-            GameManager.instance.AddScore(100);
+            GameManager.instance.AddScore(500);
             gameObject.SetActive(false);
 
         }

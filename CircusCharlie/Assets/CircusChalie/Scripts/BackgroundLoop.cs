@@ -47,7 +47,7 @@ public class BackgroundLoop : MonoBehaviour
     {
         for (int i = 0; i < goal.Length; i++)
         {
-            if (GameManager.distance == 0)
+            if (GameInfo.distance == 0)
             {
                 goal[0].SetActive(true);
             }

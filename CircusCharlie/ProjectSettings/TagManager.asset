@@ -8,6 +8,9 @@ TagManager:
   - Score
   - Counter
   - Clear
+  - Coin
+  - Ring
+  - PlayerPosition
   layers:
   - Default
   - TransparentFX
