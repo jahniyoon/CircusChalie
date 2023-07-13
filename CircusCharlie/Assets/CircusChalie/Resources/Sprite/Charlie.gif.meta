@@ -729,7 +729,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_28
+      name: Charlie_win_1
       rect:
         serializedVersion: 2
         x: 202
@@ -750,7 +750,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_29
+      name: Charlie_win_2
       rect:
         serializedVersion: 2
         x: 219
@@ -1401,7 +1401,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_60
+      name: Goal
       rect:
         serializedVersion: 2
         x: 91
@@ -1464,7 +1464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_63
+      name: Coin
       rect:
         serializedVersion: 2
         x: 218
@@ -1807,8 +1807,6 @@ TextureImporter:
       Charlie_23: 1703469245
       Charlie_24: -195640600
       Charlie_25: -422721669
-      Charlie_28: -1374668702
-      Charlie_29: 1935659153
       Charlie_3: -1675190532
       Charlie_30: -1979394939
       Charlie_31: -71194693
@@ -1833,10 +1831,8 @@ TextureImporter:
       Charlie_52: -1581701847
       Charlie_53: -1044788125
       Charlie_6: 949611191
-      Charlie_60: 755154312
       Charlie_61: -1225452144
       Charlie_62: -1173066614
-      Charlie_63: -711264169
       Charlie_64: 1896697165
       Charlie_65: -222022039
       Charlie_66: 127633036
@@ -1855,12 +1851,16 @@ TextureImporter:
       Charlie_Die: -421028779
       Charlie_Walk_1: -1758488056
       Charlie_Walk_2: 292758110
+      Charlie_win_1: -1374668702
+      Charlie_win_2: 1935659153
+      Coin: -711264169
       FireRing_L_1: -832742873
       FireRing_L_2: -823517484
       FireRing_L_Front_1: -156132371
       FireRing_L_Front_2: 288915749
       FireRing_S_1: 1720987032
       FireRing_S_2: 1297600468
+      Goal: 755154312
       Lion_Die: 862497163
       Lion_Walk_1: -1843812826
       Lion_Walk_2: -1384814851

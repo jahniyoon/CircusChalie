@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private bool isDead = false;
 
+    public static bool isStand = false;
+    public static bool isClearArea = false;
+
 
     private Rigidbody2D playerRigid = default;
 
@@ -49,6 +52,18 @@ public class PlayerController : MonoBehaviour
         }
         //animator.SetBool("Grounded", isGrounded); //Ground 는 꼭 복사 붙여넣기로 하는 습관 하기.
 
+        if (isClearArea == true)
+        {
+            float xInput = Input.GetAxis("Horizontal");
+            float xSpeed = xInput * speed;
+
+            Vector2 newVelocity = new Vector2(xSpeed, playerRigid.velocity.y);
+            playerRigid.velocity = newVelocity;
+        }
+
+        
+
+
         charlieAnimator.SetBool("Grounded", isGrounded);
         lionAnimator.SetBool("Grounded", isGrounded);
 
@@ -64,6 +79,7 @@ public class PlayerController : MonoBehaviour
 
 
         playerRigid.velocity = Vector2.zero;
+
         playerRigid.AddForce(new Vector2(0, jumpForce));
         playerRigid.velocity = Vector2.zero;
         isDead = true;
@@ -77,12 +93,35 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    private void Clear()
+    {
+
+        // 클리어 애니메이션
+        charlieAnimator.SetTrigger("Clear");
+        lionAnimator.SetTrigger("Clear");
+
+
+        playerRigid.velocity = Vector2.zero;
+        isDead = true;
+
+        StageController.isDead = true;
+
+
+        GameManager.instance.OnPlayerClear(); // 게임매니저의 OnPlayerClear 불러오기
+
+
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Dead" && isDead == false)
         {
             Debug.Log("플레이어 장애물과 만남");
             Die();
+        }
+        if (other.tag == "Clear" && isDead == false)
+        {
+            Debug.Log("플레이어 골대와 만남");
+            Clear();
         }
 
     }
