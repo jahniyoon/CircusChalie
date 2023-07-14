@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text scoreText;
     public TMP_Text bestscoreText;
+    public TMP_Text stageText;
 
     public TMP_Text distance1Text;
     public TMP_Text distance2Text;
@@ -29,9 +31,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+
         if (instance == null)
         {
             instance = this;
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         Initialization();
 
         if (GameInfo.distance % 20 !=0)
@@ -55,10 +60,11 @@ public class GameManager : MonoBehaviour
             }
 
         }
-
-        highscore = PlayerPrefs.GetInt("HighScore");
+        stageText.text = string.Format("STAGE - 0{0}", GameInfo.stage);
         scoreText.text = string.Format("SCORE  - {0}", GameInfo.score);
+        highscore = PlayerPrefs.GetInt("HighScore");
         bestscoreText.text = string.Format("HIGH - {0}", highscore);
+
         distance1Text.text = string.Format("{0}", GameInfo.distance);
 
     }
@@ -66,25 +72,62 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 게임오버 씬 이동
         if (isGameOver == true && Input.GetMouseButtonDown(0) || isGameOver == true && Input.GetKeyDown(KeyCode.Space))
         {
-            //GlobalFunc.LoadScene("PlayerScene");
+
+            //if (GameInfo.playerlife > 0 && GameInfo.stage == 1)
+            //{
+            //    GlobalFunc.LoadScene("LoadScene");
+
+            //    //GlobalFunc.LoadScene("Stage1Scene");
+            //}
+            //else if (GameInfo.playerlife > 0 && GameInfo.stage == 2)
+            //{
+            //    GlobalFunc.LoadScene("LoadScene");
+
+            //    //GlobalFunc.LoadScene("Stage2Scene");
+            //}
 
             if (GameInfo.playerlife > 0)
             {
-                GlobalFunc.LoadScene("Stage1Scene");
+                GlobalFunc.LoadScene("LoadScene");
             }
 
             else
+            {
+                GameInfo.stage = 1;
                 GlobalFunc.LoadScene("TitleScene");
+            }
 
         }
 
+        // 스테이지 클리어 씬 이동
         if (isClear == true && Input.GetMouseButtonDown(0) || isClear == true && Input.GetKeyDown(KeyCode.Space))
         {
-            GameInfo.distance = 100;
+            GameInfo.distance = 60;
+            GameInfo.stage += 1;
+            if (GameInfo.stage <= 2)
+            {
+                GlobalFunc.LoadScene("LoadScene");
+            }
+            else
+            {
+                GameInfo.stage = 1;
+                GlobalFunc.LoadScene("EndingScene");
+            }
 
-            GlobalFunc.LoadScene("Stage2Scene");
+
+            //if (GameInfo.stage == 2)
+            //{
+            //    stageText.text = string.Format("STAGE - 0{0}", GameInfo.stage);
+            //    GlobalFunc.LoadScene("Stage2Scene");
+            //}
+            //if (GameInfo.stage == 3)
+            //{
+
+            //    GlobalFunc.LoadScene("EndingScene");
+            //}
 
         }
 
@@ -142,6 +185,9 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDead()
     {
+        GameInfo.score = 0;
+
+
         isGameOver = true;
         gameOverUi.SetActive(true);
         GameInfo.playerlife -= 1;
@@ -206,6 +252,7 @@ public class GameManager : MonoBehaviour
 
     public void Initialization()
     {
+
         isGameOver = false;
         isClear = false;
 
@@ -213,6 +260,7 @@ public class GameManager : MonoBehaviour
         StageController.isClear = true;
 
         PlayerController.isClearArea = false;
+        PlayerController2.isClearArea = false;
 
 
     }

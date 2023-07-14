@@ -225,7 +225,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_4
+      name: Charlie_Stage2_1
       rect:
         serializedVersion: 2
         x: 164
@@ -246,7 +246,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_5
+      name: Charlie_Stage2_2
       rect:
         serializedVersion: 2
         x: 185
@@ -267,7 +267,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_6
+      name: Charlie_Stage2_3
       rect:
         serializedVersion: 2
         x: 205
@@ -288,7 +288,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_7
+      name: Charlie_Stage2_Jump
       rect:
         serializedVersion: 2
         x: 226
@@ -939,7 +939,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_38
+      name: Monkey_1
       rect:
         serializedVersion: 2
         x: 78
@@ -960,7 +960,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_39
+      name: Monkey_2
       rect:
         serializedVersion: 2
         x: 98
@@ -981,7 +981,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_40
+      name: Monkey_3
       rect:
         serializedVersion: 2
         x: 118
@@ -1107,7 +1107,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_46
+      name: Monkey_Blue_1
       rect:
         serializedVersion: 2
         x: 78
@@ -1128,7 +1128,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_47
+      name: Monkey_Blue_2
       rect:
         serializedVersion: 2
         x: 98
@@ -1149,7 +1149,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_48
+      name: Monkey_Blue_3
       rect:
         serializedVersion: 2
         x: 118
@@ -1170,7 +1170,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charlie_49
+      name: Monkey_Blue_Jump
       rect:
         serializedVersion: 2
         x: 139
@@ -1787,7 +1787,7 @@ TextureImporter:
         width: 14
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1808,7 +1808,7 @@ TextureImporter:
         width: 14
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1854,25 +1854,15 @@ TextureImporter:
       Charlie_31: -71194693
       Charlie_32: -1680767328
       Charlie_33: 950120765
-      Charlie_38: 1265626883
-      Charlie_39: -374118588
-      Charlie_4: -890831507
-      Charlie_40: -701637665
       Charlie_41: -675209553
       Charlie_42: -2098720921
       Charlie_43: 402450
       Charlie_44: 666869268
       Charlie_45: 863191796
-      Charlie_46: -305662445
-      Charlie_47: -478390421
-      Charlie_48: 824960417
-      Charlie_49: -208793791
-      Charlie_5: -1885357625
       Charlie_50: 778434532
       Charlie_51: -887003399
       Charlie_52: -1581701847
       Charlie_53: -1044788125
-      Charlie_6: 949611191
       Charlie_61: -1225452144
       Charlie_62: -1173066614
       Charlie_64: 1896697165
@@ -1881,7 +1871,6 @@ TextureImporter:
       Charlie_67: -1697422704
       Charlie_68: -2137383481
       Charlie_69: -1902679422
-      Charlie_7: -1938537982
       Charlie_70: 1375751210
       Charlie_71: 1167128334
       Charlie_72: 393143087
@@ -1891,6 +1880,10 @@ TextureImporter:
       Charlie_8: -819464729
       Charlie_9: 910340929
       Charlie_Die: -421028779
+      Charlie_Stage2_1: -890831507
+      Charlie_Stage2_2: -1885357625
+      Charlie_Stage2_3: 949611191
+      Charlie_Stage2_Jump: -1938537982
       Charlie_Walk_1: -1758488056
       Charlie_Walk_2: 292758110
       Charlie_win_1: -1374668702
@@ -1909,6 +1902,13 @@ TextureImporter:
       Lion_Walk_1: -1843812826
       Lion_Walk_2: -1384814851
       Lion_Walk_3: -334176151
+      Monkey_1: 1265626883
+      Monkey_2: -374118588
+      Monkey_3: -701637665
+      Monkey_Blue_1: -305662445
+      Monkey_Blue_2: -478390421
+      Monkey_Blue_3: 824960417
+      Monkey_Blue_Jump: -208793791
       fireBottle_1: -1504245417
       fireBottle_2: 2018149871
   spritePackingTag: 

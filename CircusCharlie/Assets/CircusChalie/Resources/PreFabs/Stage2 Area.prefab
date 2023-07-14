@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 3163780997499270531}
   - component: {fileID: 1379249531227283274}
   m_Layer: 0
-  m_Name: Goal Area
+  m_Name: Stage2 Area
   m_TagString: Clear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,7 +12,9 @@ public class Floor : MonoBehaviour
         if (other.tag == "Clear")
         {
             Debug.Log("¸¸³µ³ª?");
-            PlayerController.isClearArea = true;
+            PlayerController.isClearArea = true; 
+            PlayerController2.isClearArea = true;
+
             StageController.isClearZone = false; 
         }
 

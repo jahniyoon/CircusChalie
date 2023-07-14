@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CircusChalie/Scenes/Stage2Scene.unity
     guid: 38ffc0ed01389c442a600a0031a7f6d9
+  - enabled: 1
+    path: Assets/CircusChalie/Scenes/Stage3Secne.unity
+    guid: 09218d83786f6bf40b5b87d2dc07d148
+  - enabled: 1
+    path: Assets/CircusChalie/Scenes/EndingScene.unity
+    guid: 99941e33042f04a4897ebfc56a1f992c
+  - enabled: 1
+    path: Assets/CircusChalie/Scenes/LoadScene.unity
+    guid: d77189b189c872b448545a81c8f96f76
   m_configObjects: {}

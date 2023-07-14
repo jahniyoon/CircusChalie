@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+   
 
     public void ChangeTitleScene()
     {
@@ -15,12 +16,16 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Stage1Scene");
     }
+    public void ChangeLoadScene()
+    {
+        SceneManager.LoadScene("LoadScene");
+    }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Stage1Scene");
+            SceneManager.LoadScene("LoadScene");
         }
 
     }
