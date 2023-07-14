@@ -16,7 +16,7 @@ public class ScrollingObject : MonoBehaviour
     void Update()
     {
         // 게임매니저의 isGameOver가 false인 경우에만 살아있도록 하겠다.
-        if (GameManager.instance.isGameOver == false)
+        if (GameManager.instance.isGameOver == false && StageController.isClear == false && StageController.isDead == false)
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }

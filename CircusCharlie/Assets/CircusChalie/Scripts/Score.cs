@@ -20,7 +20,7 @@ public class Score : MonoBehaviour
     {
 
 
-        if (other.tag == "Player")
+        if (other.tag == "Player" && StageController.isClear == false && StageController.isDead == false)
         {
             //Debug.Log("Á¡¼ö¸¦ È¹µæÇß³ª?");
 

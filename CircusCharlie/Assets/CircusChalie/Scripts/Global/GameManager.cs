@@ -24,9 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerlife_3;
 
 
-    private int score = 0;
     private int highscore = 0;
-
   
 
     private void Awake()
@@ -45,12 +43,21 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameInfo.distance <= 10)
+        Initialization();
+
+        if (GameInfo.distance % 20 !=0)
         {
-            GameInfo.distance = 20;
+            GameInfo.distance += 10;
+
+            if (GameInfo.distance == 0)
+            {
+                GameInfo.distance = 20;
+            }
+
         }
 
         highscore = PlayerPrefs.GetInt("HighScore");
+        scoreText.text = string.Format("SCORE  - {0}", GameInfo.score);
         bestscoreText.text = string.Format("HIGH - {0}", highscore);
         distance1Text.text = string.Format("{0}", GameInfo.distance);
 
@@ -75,6 +82,8 @@ public class GameManager : MonoBehaviour
 
         if (isClear == true && Input.GetMouseButtonDown(0) || isClear == true && Input.GetKeyDown(KeyCode.Space))
         {
+            GameInfo.distance = 100;
+
             GlobalFunc.LoadScene("Stage2Scene");
 
         }
@@ -87,13 +96,13 @@ public class GameManager : MonoBehaviour
         if (isGameOver == false)
         {
             //점수 증가
-            score += newScore;
-            scoreText.text = string.Format("SCORE  - {0}", score);
+            GameInfo.score += newScore;
+            scoreText.text = string.Format("SCORE  - {0}", GameInfo.score);
 
-            if (highscore < score)
+            if (highscore < GameInfo.score)
             {
                 //점수 증가
-                highscore = score;
+                highscore = GameInfo.score;
                 PlayerPrefs.SetInt("HighScore", highscore);
                 bestscoreText.text = string.Format("HIGH - {0}", highscore);
             }
@@ -138,10 +147,10 @@ public class GameManager : MonoBehaviour
         GameInfo.playerlife -= 1;
         highscore = PlayerPrefs.GetInt("HighScore");
 
-        if (highscore < score)
+        if (highscore < GameInfo.score)
         {
             //점수 증가
-            highscore = score;
+            highscore = GameInfo.score;
             PlayerPrefs.SetInt("HighScore", highscore);
             bestscoreText.text = string.Format("HIGH - {0}", highscore);
         }
@@ -153,12 +162,13 @@ public class GameManager : MonoBehaviour
         isClear = true;
         clearUi.SetActive(true);
 
+
         highscore = PlayerPrefs.GetInt("HighScore");
 
-        if (highscore < score)
+        if (highscore < GameInfo.score)
         {
             //점수 증가
-            highscore = score;
+            highscore = GameInfo.score;
             PlayerPrefs.SetInt("HighScore", highscore);
             bestscoreText.text = string.Format("HIGH - {0}", highscore);
         }
@@ -191,6 +201,19 @@ public class GameManager : MonoBehaviour
             playerlife_2.SetActive(false);
             playerlife_3.SetActive(false);
         }
+
+    }
+
+    public void Initialization()
+    {
+        isGameOver = false;
+        isClear = false;
+
+        StageController.isDead = false;
+        StageController.isClear = true;
+
+        PlayerController.isClearArea = false;
+
 
     }
 }

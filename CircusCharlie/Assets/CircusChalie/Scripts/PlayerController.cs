@@ -31,8 +31,7 @@ public class PlayerController : MonoBehaviour
         charlieAnimator = transform.Find("Charlie").GetComponent<Animator>();
         lionAnimator = transform.Find("Lion").GetComponent<Animator>();
 
-        StageController.isDead = false;
-        isClearArea = false;
+       
 
     }
 
@@ -73,7 +72,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Die()
     {
-
+        GameInfo.score = 0;
         // 죽음 애니메이션
         charlieAnimator.SetTrigger("Die");
         lionAnimator.SetTrigger("Die");
