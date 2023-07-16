@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private int jumpCount = 0;
     private bool isGrounded = false;
     private bool isDead = false;
+    private bool isWalk = false;
+
 
     public static bool isStand = false;
     public static bool isClearArea = false;
@@ -41,16 +43,13 @@ public class PlayerController : MonoBehaviour
        
         if (isDead) { return; }
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount < 1)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
         {
-            jumpCount += 1;
-            playerRigid.velocity = Vector2.zero;
-            playerRigid.AddForce(new Vector2(0, jumpForce));
 
-            Audio audio = FindObjectOfType<Audio>();
-            audio.JumpSound();
+            JumpButton();
         }
-        //animator.SetBool("Grounded", isGrounded); //Ground 는 꼭 복사 붙여넣기로 하는 습관 하기.
+
+
 
         if (isClearArea == true)
         {
@@ -60,11 +59,18 @@ public class PlayerController : MonoBehaviour
             Vector2 newVelocity = new Vector2(xSpeed, playerRigid.velocity.y);
             playerRigid.velocity = newVelocity;
         }
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            // 입력이 감지되었을 때의 동작 수행
+            isWalk = true;
+        }
+        else { isWalk = false; };
 
-        
 
-
+        charlieAnimator.SetBool("Walk", isWalk);
         charlieAnimator.SetBool("Grounded", isGrounded);
+
+        lionAnimator.SetBool("Walk", isWalk);
         lionAnimator.SetBool("Grounded", isGrounded);
 
 
@@ -150,10 +156,22 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // 점프키 받는 함수
+    public void JumpButton()
+    {
+        if (jumpCount < 1)
+        {
+
+            jumpCount += 1;
+            playerRigid.velocity = Vector2.zero;
+            playerRigid.AddForce(new Vector2(0, jumpForce));
+
+            Audio audio = FindObjectOfType<Audio>();
+            audio.JumpSound();
+        }
+    }
 
 
-
-    
 
 
     private void OnCollisionEnter2D(Collision2D collision)
